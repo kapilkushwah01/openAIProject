@@ -13,7 +13,7 @@ export default function ChatScreen(){
             <Text>chat {id} not found</Text>
         </View>
     }
-    const handleSend=(message: any)=>{
+    const handleSend=async(message: string)=>{
         console.log("sending:",message)
     }
     return (

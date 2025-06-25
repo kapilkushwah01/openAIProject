@@ -3,7 +3,7 @@ import "../../global.css"
 import {View,Text} from "react-native";
 
 export default function HomePage(){
-    const handleSend=(message: any)=>{
+    const handleSend=async(message: string)=>{
         console.log("sending:",message)
     }
     return(

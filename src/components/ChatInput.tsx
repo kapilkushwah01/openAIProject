@@ -2,7 +2,11 @@ import { Text, TextInput, View, KeyboardAvoidingView, Platform } from "react-nat
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 import { useState } from "react";
-export default function ChatInput({onSend, isLoading}){
+interface ChatInputProps{
+    isLoading?:boolean;
+    onSend:(message:string)=>Promise<void>;
+}
+export default function ChatInput({onSend, isLoading}:ChatInputProps){
     const insets = useSafeAreaInsets();
     const [message, setMessage] = useState('');
 
