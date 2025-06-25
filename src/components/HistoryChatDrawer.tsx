@@ -1,9 +1,10 @@
 import {DrawerContent,DrawerContentComponentProps,DrawerItem, DrawerContentScrollView,DrawerItemList} from "@react-navigation/drawer";
 import {View,Text} from "react-native"
-import chatHistory from "@assets/data/chatHistory.json"
 import  {router, usePathname}  from "expo-router"
+import { useChatStore } from "@/store/chatStore";
 export default function HistoryChatDrawer(props:DrawerContentComponentProps){
     const pathname = usePathname();
+    const chatHistory= useChatStore((state)=>state.chatHistory);
     return(
       <DrawerContentScrollView {...props}>
             <DrawerItemList {...props}/>
