@@ -17,6 +17,13 @@ export default function HomePage(){
             message,
         });
         router.push(`/chat/${newChatId}`);
+        try {
+            const response = await fetch('/api/chat');
+            const data  = await response.json();
+            console.log(data)
+        }catch(err){
+            console.error('chaterror',err)
+        }
     }
     return(
         <View className="flex-1 justify-center ">
