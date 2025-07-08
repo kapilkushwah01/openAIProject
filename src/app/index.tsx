@@ -18,7 +18,10 @@ export default function HomePage(){
         });
         router.push(`/chat/${newChatId}`);
         try {
-            const response = await fetch('/api/chat');
+            const response = await fetch('/api/chat',{
+                method:'POST',
+                body:JSON.stringify({message})
+            });
             const data  = await response.json();
             console.log(data)
         }catch(err){
